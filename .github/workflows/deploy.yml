@@ -12,6 +12,11 @@ jobs:
     - name: ✅ GitHub에서 코드 가져오기
       uses: actions/checkout@v3
 
+    - name: 🐳 Docker 설치 (compose 포함)
+      run: |
+        sudo apt-get update
+        sudo apt-get install docker-compose -y
+
     - name: 🐳 Docker Build
       run: docker build -t my-php-app ./php
 
